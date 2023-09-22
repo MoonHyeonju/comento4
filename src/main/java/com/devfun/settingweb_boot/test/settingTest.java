@@ -23,11 +23,30 @@ public class settingTest {
     }
 
     @ResponseBody
-    @RequestMapping("/sqlmonthStatistic")
+    @RequestMapping("/monthLogin")
     public Map<String, Object> sqltest2(String month) throws Exception {
         return service.monthloginNum(month);
     }
 
+    @ResponseBody
+    @RequestMapping("/dayLogin")
+    public Map<String, Object> sqltest3(String day) throws Exception {
+        return service.dayloginNum(day);
+    }
+
+    @ResponseBody
+    @RequestMapping("/averageLogin")
+    public Map<String, Object> sqltest4(String day) throws Exception {
+        return service.averageloginNum(day);
+    }
+
+    @ResponseBody
+    @RequestMapping("/monthDepartmentLogin")
+    public Map<String, Object> sqltest5(String month) throws Exception {
+        return service.monthlyByDepartmentloginNum(month);
+    }
+    
+    
     @RequestMapping("/test")
     public ModelAndView test() throws Exception {
         ModelAndView mav = new ModelAndView("test");
